@@ -1,7 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { api } from './lib/api'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    async function getUsers() {
+      const res = await api.users.$get()
+      const data = await res.json()
+      console.log(data)
+    }
+    getUsers()
+  })
 
   return (
     <section className='p-4'>
