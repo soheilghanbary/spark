@@ -6,8 +6,7 @@ const useUsers = () => {
     queryKey: ['users'],
     queryFn: async () => {
       const res = await api.users.$get()
-      const data = await res.json()
-      return data
+      return await res.json()
     }
   })
 }
