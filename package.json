@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "start": "bun server/index.ts",
-    "dev": "bun --watch server/index.ts"
+    "dev": "bun --watch server/index.ts",
+    "start:dev": "concurrently \"cd frontend && bunx --bun vite\" \"bun server/index.ts\""
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "concurrently": "^8.2.2",
     "prisma": "^5.14.0"
   },
   "peerDependencies": {
