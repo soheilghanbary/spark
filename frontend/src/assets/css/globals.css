@@ -53,8 +53,6 @@
   * {
     @apply border-border box-border outline-none select-none;
     -webkit-tap-highlight-color: transparent;
-    text-align: right;
-    direction: rtl;
   }
 
   body {
