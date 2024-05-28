@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/components/providers/theme-provider'
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 
 export const Route = createRootRoute({
@@ -6,7 +7,7 @@ export const Route = createRootRoute({
 
 function App() {
   return (
-    <>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="p-2 flex gap-4">
         <Link to="/" className="[&.active]:font-bold">
           Home
@@ -17,6 +18,6 @@ function App() {
       </div>
       <hr />
       <Outlet />
-    </>
+    </ThemeProvider>
   )
 }
