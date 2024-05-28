@@ -6,17 +6,17 @@ export const Route = createRootRoute({
 
 function App() {
   return (
-    <>
-      <div className="p-2 flex gap-4">
-        <Link to="/" className="[&.active]:font-bold">
+    <section className='container p-4 mx-auto'>
+      <div className="flex gap-4">
+        <Link to="/" className="[&.active]:text-primary text-muted-foreground font-medium px-3 py-2">
           Home
         </Link>
-        <Link to="/about" className="[&.active]:font-bold">
+        <Link to="/about" className="[&.active]:text-primary text-muted-foreground font-medium px-3 py-2">
           About
         </Link>
       </div>
       <hr />
       <Outlet />
-    </>
+    </section>
   )
 }
