@@ -1,23 +1,14 @@
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import { defineConfig } from 'vite'
-import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
-
+import macrosPlugin from 'vite-plugin-babel-macros'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), TanStackRouterVite()],
+  plugins: [react(), TanStackRouterVite(), macrosPlugin()],
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dir, "./src"),
-      "@server": path.resolve(import.meta.dir, "../server"),
+      "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
-  server: {
-    proxy: {
-      "/api": {
-        target: 'http://localhost:3000',
-        changeOrigin: true
-      },
-    }
-  }
 })
